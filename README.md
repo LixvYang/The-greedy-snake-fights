@@ -10,6 +10,7 @@ Though the snake will not die,if its head touches its body, or if it eats its ow
 
 The game goes like this:
 ![Game](Game.png)
+![Game_2.png](Game_2.png)
 
 If you are careful,you can see the green point,which is controlled by player.Above the game,a point-like is so-called "food",which would be possesed by you once touched by your snake.
 
