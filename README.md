@@ -1,6 +1,6 @@
 ## The-greedy-snake-fights
 
-2D canvas game based on the SnackGame,which is famous for past.
+:snake:2D canvas game based on the SnackGame,which is famous for past.
 
 In this game, you can control the snake to eat like you control yourself.
 
@@ -24,6 +24,8 @@ Oh， I forgot to mention that snakes can't eat their own bodies, so the game is
 **If the heart in the dream is in, but is to start again**
 
 So contorl your body careful!
+
+Uroborus:alien:
 
 >The game is still under construction, waiting for your issues and pull requests.
  
