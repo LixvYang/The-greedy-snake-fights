@@ -11,16 +11,13 @@ trail = [];
 tail = 1;
 
 
+//game logic
 function game() {
     snackx += snackbodyx; snacky += snackbodyy;
-    if (snackx < 0)
-        snackx = ground - 1;
-    if (snackx > ground - 1)
-        snackx = 0;
-    if (snacky < 0)
-        snacky = ground - 1;
-    if (snacky > ground - 1)
-        snacky = 0;
+    if(snackx<-1  || snackx == ground+1 || snacky<-1 || snacky == ground+1){
+        snackx=snacky=10;
+    }
+    
 	
     ctx.fillStyle = "green";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -32,22 +29,20 @@ function game() {
             tail = 1;
     }
     
-    
+    //follow
 	trail.push({ x: snackx, y: snacky });
-    
 	while (trail.length > tail)
         trail.shift();
-    
+    //add food
 	if (foodx == snackx && foody == snacky) {
         tail++;
         foodx = Math.floor(Math.random() * ground);
         foody = Math.floor(Math.random() * ground);
     }
-
 	ctx.fillStyle = "white";  
     ctx.fillRect(foodx * ground, foody * ground, ground, ground);
 }
-
+//control snack by keydown
 document.addEventListener("keydown", keyPush);
 function keyPush(event) {
     switch (event.keyCode) {
@@ -69,16 +64,7 @@ function keyPush(event) {
             break;
     }
 }
-
-if(snackx == ground || snackx == ground || snacky == ground || snacky == ground){
-    clearInterval(game);
-    gameOver();
-}
-
-function gameOver(){
-    alert('gameOver')
-};
-
+//frames
 window.onload = function() {
     setInterval(game, 50);
 };
